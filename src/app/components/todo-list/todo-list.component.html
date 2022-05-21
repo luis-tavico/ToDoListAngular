@@ -1,0 +1,14 @@
+<div class="content">
+    <div class="container-list">
+        <h1>To Do List</h1>
+        <div class="container-btn-inp">
+            <input type="text" class="input-task" placeholder="Enter your task" (keyup.enter)="newTask()" [(ngModel)]="inputTask">
+            <button class="btn-task" (click)="newTask()">Submit</button>
+        </div>
+        <form action="" class="form-todo" *ngFor="let task of tasks; let i = index;">
+            <ul>
+                <li class="taskdone {{( task.completed? 'yes':'not')}}">{{ task.task }}<span class=" icon-check " (click)="taskCheck(i) "><i class="check {{( task.completed? 'fa-regular fa-square-check':'fa-regular fa-square')}}"></i></span><span class="icon-trash "><i class="fa-solid fa-trash-can" (click)="deleteTask(i)"></i></span></li>
+            </ul>
+        </form>
+    </div>
+</div>
